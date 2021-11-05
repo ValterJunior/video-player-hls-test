@@ -30,6 +30,7 @@
             this.player = videojs(this.$refs.videoPlayer, {
                 autoplay: true,
                 controls: true,
+                fluid: true,
                 sources: [
                     {
                         src: this.manifestUrl,
@@ -52,3 +53,9 @@
     }
 </script>
 <style src="video.js/dist/video-js.css"></style>
+<style scoped>
+    .video-js {
+        /*width: 100% !important;*/
+        /*height: 100% !important;*/
+    }
+</style>

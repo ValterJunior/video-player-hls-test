@@ -12,7 +12,6 @@
                       <b-tab title="Shaka Player" active>
                           <shaka-player
                               :manifest-url="manifestUri"
-                              poster-url="//shaka-player-demo.appspot.com/assets/poster.jpg"
                           />
                       </b-tab>
                       <b-tab title="Video.js">

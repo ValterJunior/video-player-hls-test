@@ -1,10 +1,9 @@
 <template>
-    <div ref="videoContainer" class="shadow-lg mx-auto max-w-full size">
+    <div ref="videoContainer" class="shadow-lg mx-auto">
         <video
             id="video"
             ref="videoPlayer"
             class="w-full h-full"
-            :poster="posterUrl"
         ></video>
     </div>
 </template>
@@ -18,15 +17,6 @@
             manifestUrl: {
                 type: String,
                 required: true
-            },
-            // licenseServer: {
-            //     type: String,
-            //     required: true
-            // },
-            posterUrl: {
-                type: String,
-                required: false,
-                default: ''
             }
         },
         mounted() {
@@ -37,12 +27,6 @@
                 this.$refs.videoPlayer
             );
             ui.getControls();
-            // console.log(Object.keys(shaka.ui));
-            // player.configure({
-            //     drm: {
-            //         servers: { 'com.widevine.alpha': this.licenseServer }
-            //     }
-            // });
             player
                 .load(this.manifestUrl)
                 .then(() => {
@@ -60,8 +44,3 @@
 </script>
 
 <style src="shaka-player/dist/controls.css"></style>
-<style scoped>
-.size {
-    width: 800px;
-}
-</style>
